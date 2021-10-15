@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-public class Project2 {
+public class proj2 {
 
  	public static void main (String[] args)
  	{
@@ -48,6 +48,7 @@ public class Project2 {
                  	oneLoop(values);
              	}
          	}
+			// print out error messages
          	catch (FileNotFoundException e)
          	{
              	System.out.println("File is not found in the current directory.");
@@ -68,6 +69,7 @@ public class Project2 {
                     	System.out.println("Error Closing");
                  	}
             	}
+				// allows for continuous calls be the user without needing to rerun the program
              	System.out.println("Would you like to run the program again? y for yes n for no");
              	String answer = input.nextLine();
              	if (answer.equalsIgnoreCase("n"))
@@ -80,7 +82,7 @@ public class Project2 {
 
  	public static void threeLoops(int[] values)
  	{
-     	//starts timing, repeated in each function.
+     	//starts the timing
      	long totalTime = 0;
      	int maxSum = 0;
      	for (int z = 0; z < 50; z++)
@@ -100,10 +102,11 @@ public class Project2 {
                  	maxSum = sum;
          	}
      	}
-     	//ends timer, repeated in each function.
+     	//ends timer
      	long end = System.nanoTime();
     	totalTime += (end - start);
      	}
+		// print out the resulting data
      	System.out.println("threeLoops results:");
      	System.out.println("Average Execution Time: " + totalTime/50.0 + " nanoseconds");
      	System.out.println("Max Sum: " + maxSum);
@@ -112,6 +115,7 @@ public class Project2 {
 
  	public static void twoLoops(int[] values)
  	{
+		// starts timing
      	long totalTime = 0;
      	int maxSum = 0;
      	for (int z = 0; z < 50; z++)
@@ -129,9 +133,11 @@ public class Project2 {
                  	maxSum = sum;
          	}
      	}
+		// ends timing
      	long end = System.nanoTime();
      	totalTime += (end - start);
      	}
+		// print out the resulting data
      	System.out.println("twoLoops results:");
      	System.out.println("Average Execution Time: " + totalTime/50.0 + " nanoseconds");
      	System.out.println("Max Sum: " + maxSum);
@@ -139,6 +145,7 @@ public class Project2 {
 
  	public static void oneLoop(int[] values)
  	{
+		//starts the timing
      	long totalTime = 0;
      	int maxSum = 0;
      	for (int z = 0; z < 50; z++)
@@ -156,16 +163,20 @@ public class Project2 {
              	if (sum < 0)
                  	sum = 0;
      	}
+		// calculates total time
      	long end = System.nanoTime();
      	totalTime += (end - start);
      	}
+		// print out the resulting data
      	System.out.println("oneLoop results:");
      	System.out.println("Average Execution Time: " + totalTime/50.0 + " nanoseconds");
     	System.out.println("Max Sum: " + maxSum);
  	}
 
+	// seperate function needed to keep track of the timing of the recursive function
  	public static void recursiveSequence(int[] values)
  	{
+		//starts the timing
      	int max = 0;
      	long totalTime = 0;
      	for (int z = 0; z < 50; z++)
@@ -175,6 +186,7 @@ public class Project2 {
          	long end = System.nanoTime();
          	totalTime += end - start;
      	}
+		// end of timer and print out resulting data
      	System.out.println("recursiveSequence results:");
      	System.out.println("Average Execution Time: " + totalTime/50.0 + " nanoseconds");
      	System.out.println("Max Sum: " + max);
